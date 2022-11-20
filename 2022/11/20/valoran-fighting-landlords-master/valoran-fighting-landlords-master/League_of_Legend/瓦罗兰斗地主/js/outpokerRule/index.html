@@ -1,0 +1,717 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="&#x2F;&#x2F; 检查牌组的函数 &#x2F;*      牌型分类：     1       单张     2       对子     3       三张     4       普炸     5       三带一     6       顺子     7       三带二     8       连对     9       四带二     10      四带两对     777     飞机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/outpokerRule/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&#x2F;&#x2F; 检查牌组的函数 &#x2F;*      牌型分类：     1       单张     2       对子     3       三张     4       普炸     5       三带一     6       顺子     7       三带二     8       连对     9       四带二     10      四带两对     777     飞机">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg">
+<meta property="article:published_time" content="2022-11-20T06:26:00.920Z">
+<meta property="article:modified_time" content="2022-11-20T06:25:44.936Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/outpokerRule/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: false,
+  postUpdate: '2022-11-20 14:25:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://bu.dusays.com/2022/05/02/626f92e193879.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-20T06:26:00.920Z" title="发表于 2022-11-20 14:26:00">2022-11-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-20T06:25:44.936Z" title="更新于 2022-11-20 14:25:44">2022-11-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container">// 检查牌组的函数
+/* 
+    牌型分类：
+    1       单张
+    2       对子
+    3       三张
+    4       普炸
+    5       三带一
+    6       顺子
+    7       三带二
+    8       连对
+    9       四带二
+    10      四带两对
+    777     飞机   
+    7777    两飞机带两对
+    77777   三飞机带三张
+    888     王炸
+*/
+function checkPoker(data) {
+    // 为了方便牌型判断需要先把选中的牌组数据进行排序
+    sortpoker(data.poker);
+
+    let length = data.poker.length;       // 用于分析牌组的张数
+
+    switch (length) {
+        // 判断一张牌的情况
+        case 1:
+            data.type = 1;          // 设置当前选择牌的牌型
+            // 判断是否为大小王
+            if (data.poker[0].num == 14) {
+                if (data.poker[0].color == 0) {
+                    data.max = 14;
+                } else {
+                    data.max = 15;
+                }
+            } else {
+                data.max = data.poker[0].num;
+            }
+			voicePlay(data);
+            return true;        // 符合规则返回true
+            break;
+
+        // 判断两张牌的情况
+        case 2:
+            if (data.poker[0].num != data.poker[1].num) {
+                return false;
+            } else {
+                // 判断是否为王炸
+                if (data.poker[0].num == 14) {
+                    data.type = 888;        // 设置牌型为王炸
+                    data.max = 14;
+                } else {
+                    data.type = 2;          // 设置型为对子
+                    data.max = data.poker[0].num;
+                }
+				voicePlay(data);
+                return true;
+            }
+            break;
+
+        // 判断三张牌的情况
+        case 3:
+            if (data.poker[0].num == data.poker[2].num) {
+                data.type = 3;      // 设置牌型为3张
+                data.max = data.poker[0].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            return false;
+            break;
+
+        // 判断四张牌的情况
+        case 4:
+            if (data.poker[0].num == data.poker[3].num) {
+                data.type = 4;      // 设置牌型为普通炸弹
+                data.max = data.poker[0].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            } else if (data.poker[0].num == data.poker[2].num || data.poker[1].num == data.poker[3].num) {
+                data.type = 5;      // 设置牌型为三带一
+                data.max = data.poker[1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            return false;
+            break;
+
+        // 判断五张牌的情况
+        case 5:
+            // 先判断是否为顺子
+            if (checkStraight(data.poker)) {
+                data.type = 6;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            // 判断是否为三带二
+            if (data.poker[0].num == data.poker[2].num && data.poker[3].num == data.poker[4].num ||
+                data.poker[0].num == data.poker[1].num && data.poker[2].num == data.poker[4].num
+            ) {
+                data.type = 7;      // 设置牌型为顺子
+                data.max = data.poker[2].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            return false;
+            break;
+
+        // 判断六张牌的情况
+        case 6:
+            // 先判断是否为顺子
+            if (checkStraight(data.poker)) {
+                data.type = 6;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            // 判断是否为连对
+            if (checkDouble(data.poker)) {
+                data.type = 8;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            // 判断是否为四带二
+            if (data.poker[0].num == data.poker[3].num ||
+                data.poker[1].num == data.poker[4].num ||
+                data.poker[2].num == data.poker[5].num
+            ) {
+                data.type = 9;      // 设置牌型为四带二
+                data.max = data.poker[2].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            // 判断是否为飞机
+            if (data.poker[0].num == data.poker[2].num &&
+                data.poker[3].num == data.poker[5].num &&
+                data.poker[0].num * 1 + 1 == data.poker[3].num
+            ) {
+                data.type = 777;      // 设置牌型为飞机
+                data.max = data.poker[5].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            return false;
+            break;
+
+        // 七张牌的情况
+        case 7:
+            // 先判断是否为顺子
+            if (checkStraight(data.poker)) {
+                data.type = 6;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            return false;
+            break;
+
+        // 八张牌的情况
+        case 8:
+            // 先判断是否为顺子
+            if (checkStraight(data.poker)) {
+                data.type = 6;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            // 判断是否为连对
+            if (checkDouble(data.poker)) {
+                data.type = 8;      // 设置牌型为连对
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            /* 
+                八张牌的飞机可能性
+                33344456
+                34555666
+                33334446
+                34445556
+            */
+            // 判断是否为飞机
+            if (data.poker[0].num == data.poker[2].num &&
+                data.poker[3].num == data.poker[5].num &&
+                data.poker[0].num * 1 + 1 == data.poker[3].num ||   // 判断前6张牌是否连续
+
+                data.poker[2].num == data.poker[4].num &&
+                data.poker[5].num == data.poker[7].num &&
+                data.poker[2].num * 1 + 1 == data.poker[5].num ||    // 判断后6张牌是否连续
+
+                data.poker[1].num == data.poker[3].num &&
+                data.poker[4].num == data.poker[6].num &&
+                data.poker[1].num * 1 + 1 == data.poker[4].num   // 判断中间6张牌是否连续
+            ) {
+                data.type = 777;      // 设置牌型为飞机
+                data.max = data.poker[5].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            // 判断四带两对
+            /* 
+                44445566
+                44555566
+                44556666
+            */
+            if (data.poker[0].num == data.poker[3].num &&
+                data.poker[4].num == data.poker[5].num &&
+                data.poker[6].num == data.poker[7].num      // 判断前四张
+            ) {
+                data.type = 10;      // 设置牌型为四带两对
+                data.max = data.poker[0].num;   // 设置牌型的判断值
+            }
+
+            if (data.poker[2].num == data.poker[5].num &&
+                data.poker[0].num == data.poker[1].num &&
+                data.poker[6].num == data.poker[7].num      // 判断中间四张
+            ) {
+                data.type = 10;      // 设置牌型为四带两对
+                data.max = data.poker[2].num;   // 设置牌型的判断值
+            }
+
+            if (data.poker[4].num == data.poker[7].num &&
+                data.poker[0].num == data.poker[1].num &&
+                data.poker[2].num == data.poker[3].num        // 判断后四张
+            ) {
+                data.type = 10;      // 设置牌型为四带两对
+                data.max = data.poker[7].num;   // 设置牌型的判断值
+				voicePlay(data)
+				return true;
+            }
+
+            return false;
+            break;
+        case 9:
+            if (checkStraight(data.poker)) {
+                data.type = 8;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            break;
+        case 10:
+            if (checkStraight(data.poker)) {
+                data.type = 8;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            // 判断是否为连对
+            if (checkDouble(data.poker)) {
+                data.type = 8;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            //判断是否为飞机带两对
+            /**
+             * 3344555666
+             * 5556667788
+             * 4455566677
+             */
+            // 判断前6张牌是否连续
+            if (data.poker[0].num == data.poker[2].num &&
+                data.poker[3].num == data.poker[5].num &&
+                data.poker[0].num * 1 + 1 == data.poker[3].num &&
+                data.poker[6].num == data.poker[7].num &&
+                data.poker[8].num == data.poker[9].num) {
+
+                data.type = 7777;      // 设置牌型为飞机
+                data.max = data.poker[5].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            // 判断后6张牌是否连续)
+            if (data.poker[4].num == data.poker[6].num &&
+                data.poker[7].num == data.poker[9].num &&
+                data.poker[4].num * 1 + 1 == data.poker[7].num &&
+                data.poker[0].num == data.poker[1].num &&
+                data.poker[2].num == data.poker[3].num) {
+
+                data.type = 7777;      // 设置牌型为飞机
+                data.max = data.poker[9].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            // 判断中间6张牌是否连续
+            if (data.poker[2].num == data.poker[4].num &&
+                data.poker[5].num == data.poker[7].num &&
+                data.poker[2].num * 1 + 1 == data.poker[5].num &&
+                data.poker[0].num == data.poker[1].num &&
+                data.poker[8].num == data.poker[9].num) {
+
+                data.type = 7777;      // 设置牌型为飞机
+                data.max = data.poker[7].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            break;
+        case 11:
+            if (checkStraight(data.poker)) {
+                data.type = 8;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            break;
+
+        case 12:
+            if (checkStraight(data.poker)) {
+                data.type = 6;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            // 判断是否为连对
+            if (checkDouble(data.poker)) {
+                data.type = 8;      // 设置牌型为连对
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            //判断是否是3连飞机带3张
+            /**
+             * 6667778889 10 11
+             * 345666777888
+             * 346667778889                    第3、5、9张
+             * 56667778889 10
+             * 566667777888
+             * 666777788889
+             * 666677778888
+             * 666777888999
+             */
+            // 判断前9张牌是否连续
+            if (data.poker[0].num == data.poker[2].num &&
+                data.poker[3].num == data.poker[5].num &&
+                data.poker[6].num == data.poker[8].num &&
+                data.poker[0].num * 1 + 1 == data.poker[3].num &&
+                data.poker[3].num * 1 + 1 == data.poker[6].num 
+                ) {
+
+                data.type = 77777;      // 设置牌型为飞机
+                data.max = data.poker[8].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            // 判断后9张牌是否连续)
+            if (data.poker[3].num == data.poker[5].num &&
+                data.poker[6].num == data.poker[8].num &&
+                data.poker[9].num == data.poker[11].num &&
+                data.poker[5].num * 1 + 1 == data.poker[6].num &&
+                data.poker[6].num * 1 + 1 == data.poker[9].num 
+               ) {
+
+                data.type = 77777;      // 设置牌型为飞机
+                data.max = data.poker[11].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            // 判断中间9张牌是否连续
+            if (data.poker[2].num == data.poker[4].num &&
+                data.poker[5].num == data.poker[7].num &&
+                data.poker[8].num == data.poker[10].num &&
+                data.poker[3].num * 1 + 1 == data.poker[5].num &&
+                data.poker[5].num * 1 + 1 == data.poker[9].num ||
+
+                data.poker[1].num == data.poker[3].num &&
+                data.poker[4].num == data.poker[6].num &&
+                data.poker[7].num == data.poker[9].num &&
+                data.poker[3].num * 1 + 1 == data.poker[5].num &&
+                data.poker[5].num * 1 + 1 == data.poker[9].num ||
+
+                data.poker[1].num == data.poker[4].num &&
+                data.poker[5].num == data.poker[8].num &&
+                data.poker[9].num == data.poker[11].num &&
+                data.poker[3].num * 1 + 1 == data.poker[5].num &&
+                data.poker[5].num * 1 + 1 == data.poker[9].num ||
+
+                data.poker[0].num == data.poker[2].num &&
+                data.poker[3].num == data.poker[6].num &&
+                data.poker[7].num == data.poker[10].num &&
+                data.poker[3].num * 1 + 1 == data.poker[5].num &&
+                data.poker[5].num * 1 + 1 == data.poker[9].num ||
+
+                data.poker[0].num == data.poker[3].num &&
+                data.poker[4].num == data.poker[7].num &&
+                data.poker[8].num == data.poker[11].num &&
+                data.poker[3].num * 1 + 1 == data.poker[5].num &&
+                data.poker[5].num * 1 + 1 == data.poker[9].num 
+                ) {
+
+                data.type = 77777;      // 设置牌型为飞机
+                data.max = data.poker[9].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+
+            //判断特殊情况  666777888999
+            if (data.poker[0].num == data.poker[2].num &&
+                data.poker[3].num == data.poker[5].num &&
+                data.poker[6].num == data.poker[8].num &&
+                data.poker[9].num == data.poker[11].num &&
+                data.poker[0].num * 1 + 1 == data.poker[3].num &&
+                data.poker[3].num * 1 + 1 == data.poker[6].num &&
+                data.poker[6].num * 1 + 1 == data.poker[11].num 
+                ) {
+
+                data.type = 77777;      // 设置牌型为飞机
+                data.max = data.poker[8].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            break;
+        case 14:
+            // 判断是否为连对
+            if (checkDouble(data.poker)) {
+                data.type = 8;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            break;
+        case 16:
+            // 判断是否为连对
+            if (checkDouble(data.poker)) {
+                data.type = 8;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            break;
+        case 18:
+            // 判断是否为连对
+            if (checkDouble(data.poker)) {
+                data.type = 8;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            break;
+        case 20:
+            // 判断是否为连对
+            if (checkDouble(data.poker)) {
+                data.type = 8;      // 设置牌型为顺子
+                data.max = data.poker[data.poker.length - 1].num;   // 设置牌型的判断值
+				voicePlay(data)
+                return true;
+            }
+            break;
+        default:
+            break;
+    }
+
+}
+
+// 检查当前牌型是否为顺子
+function checkStraight(poker) {
+    if (poker[ poker.length - 1].num >= 13) {
+        return false
+    }
+    for (let i = 0; i < poker.length - 1; i++) {
+        if (poker[i].num * 1 + 1 != poker[i + 1].num) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// 检查当前牌型是否为连对
+function checkDouble(poker) {
+    //  33445566
+    if (poker[ poker.length - 1].num >= 13) {
+        return false
+    }
+    for (let i = 0; i < poker.length - 2; i += 2) {
+        if (poker[i].num != poker[i + 1].num || poker[i].num * 1 + 1 != poker[i + 2].num) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// 检查当前手牌是否大于桌上的牌的函数
+function checkVS() {
+  
+  
+    // 如果出的牌是王炸的话可以直接打出
+    if (gameData.select.type == 888) {
+        gameData.multiple*=2
+        console.log("e")
+        return true;
+    }
+
+    // 出的是普通炸弹并且桌上的不是炸弹或者王炸就可以直接打出
+    if (gameData.select.type == 4 && (gameData.desktop.type != 4 && gameData.desktop.type != 888)) {
+        console.log("d")
+        gameData.multiple*=2
+        return true;
+    }
+
+      // 如果桌面上没有牌的话可以直接打出
+    if (gameData.desktop.type == 0) {
+        // console.log("f")
+        return true;
+    }
+
+    // 如果桌面上的牌是王炸那无论是什么牌都不能打出
+    if (gameData.desktop.type == 888) {
+        console.log("c")
+        return false;
+    }
+
+    // 一般组数据大小的判断
+    if (gameData.select.type == gameData.desktop.type &&
+        gameData.select.poker.length == gameData.desktop.poker.length &&
+        gameData.select.max > gameData.desktop.max
+    ) {
+        if(gameData.select.type==4){
+            gameData.multiple*=2
+        }
+        console.log("gameData.select.max:")
+        console.log(gameData.select.max)
+        console.log("gameData.desktop.max:")
+        console.log(gameData.desktop.max)
+
+        console.log("a")
+        return true;
+    } else {
+        console.log("gameData.select.max:")
+        console.log(gameData.select.max)
+        console.log("gameData.desktop.max:")
+        console.log(gameData.desktop.max)
+        console.log("b")
+        return false;
+    }
+}
+
+function voicePlay(data){
+	if(checkVS()){
+		if(data.type==1){
+			let single = document.getElementById("single"+data.max);
+			console.log(data.type)
+			single.play();
+		}else if(data.type==2){
+			let dui = document.getElementById("dui"+data.max);
+			dui.play();
+		}else if(data.type==888){
+			let wangzha = document.getElementById("wangzha");
+			wangzha.play();
+		}else if(data.type==3){
+			let sange = document.getElementById("sange");
+			sange.play();
+		}else if(data.type==4){
+			let voice = document.getElementById("zhadan");
+			voice.play();
+		}else if(data.type==5){
+			let voice = document.getElementById("sandaiyi");
+			voice.play();
+		}else if(data.type==6){
+			let voice = document.getElementById("shunzi");
+			voice.play();
+		}else if(data.type==7){
+			let voice = document.getElementById("sandaier");
+			voice.play();
+		}else if(data.type==8){
+			let voice = document.getElementById("liandui");
+			voice.play();
+		}else if(data.type==9){
+			let voice = document.getElementById("sidaier");
+			voice.play();
+		}else if(data.type==10){
+			let voice = document.getElementById("sidailiangdui");
+			voice.play();
+		}else if(data.type==777||data.type==7777||data.type==77777){
+			let voice = document.getElementById("feiji");
+			voice.play();
+		}
+		
+	}
+	
+}
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/outpokerRule/">http://example.com/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/outpokerRule/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Hexo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/poker-data/"><img class="prev-cover" src="https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg" onerror="onerror=null;src='https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/jquery-3.2.1.min/"><img class="next-cover" src="https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg" onerror="onerror=null;src='https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://bu.dusays.com/2022/05/02/626f92e193879.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/shuffle_deal/" title="无题"><img src="https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg" onerror="this.onerror=null;this.src='https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/shuffle_deal/" title="无题">无题</a><time datetime="2022-11-20T06:26:00.924Z" title="发表于 2022-11-20 14:26:00">2022-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/poker-data/" title="无题"><img src="https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg" onerror="this.onerror=null;this.src='https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/poker-data/" title="无题">无题</a><time datetime="2022-11-20T06:26:00.922Z" title="发表于 2022-11-20 14:26:00">2022-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/outpokerRule/" title="无题"><img src="https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg" onerror="this.onerror=null;this.src='https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/outpokerRule/" title="无题">无题</a><time datetime="2022-11-20T06:26:00.920Z" title="发表于 2022-11-20 14:26:00">2022-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/jquery-3.2.1.min/" title="无题"><img src="https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg" onerror="this.onerror=null;this.src='https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/jquery-3.2.1.min/" title="无题">无题</a><time datetime="2022-11-20T06:26:00.918Z" title="发表于 2022-11-20 14:26:00">2022-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/jquery-1.11.1.min/" title="无题"><img src="https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg" onerror="this.onerror=null;this.src='https://p9.qhimg.com/bdr/__85/t01f6209e46426b4a20.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/11/20/valoran-fighting-landlords-master/valoran-fighting-landlords-master/League_of_Legend/%E7%93%A6%E7%BD%97%E5%85%B0%E6%96%97%E5%9C%B0%E4%B8%BB/js/jquery-1.11.1.min/" title="无题">无题</a><time datetime="2022-11-20T06:26:00.916Z" title="发表于 2022-11-20 14:26:00">2022-11-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By John Doe</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
